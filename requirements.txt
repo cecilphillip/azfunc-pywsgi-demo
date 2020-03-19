@@ -1,9 +1,8 @@
-azf-wsgi==0.3.0
-azure-functions==1.0.5
+azure-functions==1.2.0
 bottle==0.12.18
-click==7.0
+click==7.1.1
 flask==1.1.1
 itsdangerous==1.1.0
-jinja2==2.10.3
+jinja2==2.11.1
 markupsafe==1.1.1
-werkzeug==0.16.0
+werkzeug==1.0.0

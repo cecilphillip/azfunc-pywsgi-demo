@@ -5,13 +5,13 @@ description = ""
 authors = ["cecilphillip <cecilphillip@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.6"
-azure-functions = "^1.0.5"
-azf_wsgi = "^0.3.0"
+python = "^3.7"
+azure-functions = "^1.2.0"
 bottle = "^0.12.18"
 flask = "^1.1.1"
 
 [tool.poetry.dev-dependencies]
+autopep8 = "^1.5"
 
 [build-system]
 requires = ["poetry>=0.12"]

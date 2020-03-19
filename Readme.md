@@ -9,13 +9,17 @@ This sample mounts various WSGI compliant web frameworks into a single [Azure Fu
 | Flask     | flask/{\*route}  |
 
 ## Installing
-If you have use poetry to manage your Python project dependencies, you can use the following command
+
+If you have use [poetry](https://poetry.eustace.io) to manage your Python project dependencies, you can use the following command
+
 ```bash
 > poetry install
 ```
+
 This will create the virtual environment and install the required packages.
 
 Otherwise, you can install via pip
+
 ```bash
 > python -m venv .venv
 > source .venv/bin/activate

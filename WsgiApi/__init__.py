@@ -1,7 +1,11 @@
-import logging
+from azure.functions import (
+    HttpRequest,
+    HttpRequest,
+    WsgiMiddleware,
+    Context
+)
 
-import azure.functions as func
-from azf_wsgi import AzureFunctionsWsgi
+from flask import Flask
 
 
 def web_application(env, start_response, ):
@@ -12,7 +16,7 @@ def web_application(env, start_response, ):
     return[b'<strong>Raw WSGI application!!<strong>']
 
 
-def main(req: func.HttpRequest,  context: func.Context) -> func.HttpResponse:
+def main(req: HttpRequest,  context: Context) -> HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    return AzureFunctionsWsgi(web_application).main(req, context)
+    return WsgiMiddleware(web_application).main(req, context)

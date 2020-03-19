@@ -1,9 +1,11 @@
-import logging
+from azure.functions import (
+    HttpRequest,
+    HttpRequest,
+    WsgiMiddleware,
+    Context
+)
 
-import azure.functions as func
-from azf_wsgi import AzureFunctionsWsgi
-
-from bottle import Bottle, run
+from bottle import Bottle
 
 app = Bottle()
 
@@ -13,7 +15,7 @@ def hello():
     return "<strong>Bottle Application</strong>"
 
 
-def main(req: func.HttpRequest,  context: func.Context) -> func.HttpResponse:
+def main(req: HttpRequest,  context: Context) -> HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    return AzureFunctionsWsgi(app.wsgi).main(req, context)
+    return WsgiMiddleware(app.wsgi).main(req, context)

@@ -1,9 +1,11 @@
-import logging
+from azure.functions import (
+    HttpRequest,
+    HttpRequest,
+    WsgiMiddleware,
+    Context
+)
+
 from flask import Flask
-
-import azure.functions as func
-from azf_wsgi import AzureFunctionsWsgi
-
 
 app = Flask(__name__)
 
@@ -13,7 +15,7 @@ def hello():
     return "<strong>Hello From Flask</strong>"
 
 
-def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
+def main(req: HttpRequest, context: Context) -> HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    return AzureFunctionsWsgi(app.wsgi_app).main(req, context)
+    return WsgiMiddleware(app.wsgi_app).main(req, context)

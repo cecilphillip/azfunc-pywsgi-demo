@@ -1,6 +1,6 @@
 # Experiments with Azure Functions and WSGI
 
-This sample mounts various WSGI compliant web frameworks into a single [Azure Function](https://docs.microsoft.com/azure/azure-functions/functions-reference-python?WT.mc_id=wsgi-github-cephilli) app using the [azf-wsgi](https://github.com/vtbassmatt/azf-wsgi) package.
+This sample mounts various WSGI compliant web frameworks into a single [Azure Function](https://docs.microsoft.com/azure/azure-functions/functions-reference-python?WT.mc_id=academic-0000-cephilli) app using the [azf-wsgi](https://github.com/vtbassmatt/azf-wsgi) package.
 
 | Framework | Matched Routes   |
 | --------- | ---------------- |
